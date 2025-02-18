@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item.active {
+    background-color: #212529 !important;
+    color: #fff !important;
+}
+
+.user-menu-link {
+    color: #fff;
+}
+
+.user-menu-link:hover {
+    color: #888e97 !important;
+}
+
+.user-avatar {
+    height: 40px;
+    width: 40px;
+}
