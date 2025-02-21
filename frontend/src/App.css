@@ -35,9 +35,19 @@
   color: #fff !important;
 }
 
+.btn-outline-light > .user-display-name {
+  color: #fff !important;
+}
+
 .btn-outline-light.active,
 .btn-outline-light:hover,
 .btn-outline-light:focus {
+  color: #4389cc !important;
+}
+
+.btn-outline-light.active > .user-display-name.active,
+.btn-outline-light:hover > .user-display-name,
+.btn-outline-light:focus > .user-display-name:focus {
   color: #4389cc !important;
 }
 

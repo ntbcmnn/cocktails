@@ -63,8 +63,7 @@ const UserMenu: React.FC<Props> = ({user}) => {
               :
               <i className="bi bi-person-circle"></i>
           }
-
-          {user.displayName}
+          <span className="text-white user-display-name">{user.displayName}</span>
         </button>
 
         <div className={`dropdown-menu ${isOpen ? 'show' : ''}`}>

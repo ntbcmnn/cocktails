@@ -36,8 +36,8 @@ const LoginPage = () => {
   return (
     <div className="container mt-5" style={{maxWidth: '400px'}}>
       <div className="text-center mb-4">
-        <i className="bi bi-unlock fs-2 "></i>
-        <h2 className="mt-2">Sign In</h2>
+        <i className="bi bi-unlock fs-2" style={{color: '#4389cc'}}></i>
+        <h2 className="mt-2" style={{color: '#4389cc'}}>Sign In</h2>
       </div>
 
       <div className="mb-3 d-flex flex-column align-items-center">

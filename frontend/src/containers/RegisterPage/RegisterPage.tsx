@@ -63,8 +63,8 @@ const RegisterPage = () => {
 
   return (
     <div className="container mt-5" style={{maxWidth: '400px'}}>
-      <div className="text-center mb-4">
-        <i className="bi bi-lock fs-2 "></i>
+      <div className="text-center mb-4" style={{color: '#4389cc'}}>
+        <i className="bi bi-lock fs-2" style={{color: '#4389cc'}}></i>
         <h2 className="mt-2">Sign Up</h2>
       </div>
       {isLoading ? <Loader/> :
