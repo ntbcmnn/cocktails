@@ -8,6 +8,28 @@ export interface IUser {
   email: string;
 }
 
+export interface Ingredients {
+  name: string;
+  amount: string;
+}
+
+export interface ICocktail {
+  _id: string;
+  user: IUser;
+  name: string;
+  image: File | null;
+  recipe: string;
+  isPublished: boolean;
+  ingredients: Ingredients[];
+}
+
+export interface ICocktailMutation {
+  name: string;
+  image: File | null;
+  recipe: string;
+  ingredients: Ingredients[];
+}
+
 export interface RegisterResponse {
   user: IUser;
   message: string;
