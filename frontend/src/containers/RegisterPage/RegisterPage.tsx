@@ -135,11 +135,14 @@ const RegisterPage = () => {
               label="Avatar"
               onGetFile={onFileChange}
               file={form.avatar}
-              className="form-control"
+              className={`form-control ${getFieldError('avatar') ? 'is-invalid' : ''}`}
             />
+            {getFieldError('avatar') && (
+              <div className="invalid-feedback">{getFieldError('avatar')}</div>
+            )}
           </div>
 
-          <button type="submit" className="btn btn-dark w-100">
+          <button type="submit" className="btn btn-blue w-100">
             Sign Up
           </button>
 

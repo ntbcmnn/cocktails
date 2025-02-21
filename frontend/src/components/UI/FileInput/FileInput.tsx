@@ -61,7 +61,7 @@ const FileInput: React.FC<Props> = ({
         />
         <button
           type="button"
-          className="btn btn-dark fs-5 d-inline-flex justify-content-center"
+          className="btn btn-blue fs-5 d-inline-flex justify-content-center"
           onClick={activateInput}
         >
           <i className="bi bi-file-earmark"></i>

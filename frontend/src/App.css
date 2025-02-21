@@ -1,26 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
 }
 
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item.active {
-    background-color: #212529 !important;
-    color: #fff !important;
+  background-color: #4389cc !important;
+  color: #fff !important;
+}
+
+.navbar {
+  background: #4389cc;
 }
 
 .user-menu-link {
-    color: #fff;
+  color: #fff;
+  padding-top: 5px;
 }
 
 .user-menu-link:hover {
-    color: #888e97 !important;
+  text-decoration: overline;
+}
+
+.btn-blue {
+  background: rgba(67, 137, 204, 0.76) !important;
+  color: #fff !important;
+}
+
+.btn-blue:hover {
+  background: rgba(67, 137, 204, 0.94) !important;
+  color: #fff !important;
+}
+
+.btn-outline-light.active,
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  color: #4389cc !important;
+}
+
+.btn-outline-light:hover > .user-avatar {
+  border: 2px solid #4389cc !important;
+}
+
+.cocktail-card {
+  background: #63a1dc !important;
 }
 
 .user-avatar {
-    height: 40px;
-    width: 40px;
+  height: 50px;
+  width: 50px;
+  border: 2px solid white;
 }

@@ -7,6 +7,7 @@ interface Props {
   isDisabled?: boolean;
   type?: 'button' | 'submit';
   onClick?: () => void;
+  children?: React.ReactNode;
 }
 
 const ButtonLoading: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const ButtonLoading: React.FC<Props> = ({
   text,
   type = 'submit',
   onClick,
+  children,
 }) => {
   return (
     <div>
@@ -22,9 +24,10 @@ const ButtonLoading: React.FC<Props> = ({
         onClick={onClick}
         type={type}
         disabled={isDisabled}
-        className="btn btn-dark d-flex align-items-center"
+        className="btn btn-blue d-flex align-items-center"
       >
         <span className="me-2">{text}</span>
+        {children}
         {isLoading ? <ButtonSpinner/> : null}
       </button>
     </div>
