@@ -24,11 +24,23 @@ const UserSchema = new Schema<
 >({
     password: {
         type: String,
-        required: true,
+        validate: [
+            {
+                validator: function (value: string): boolean {
+                    return value === value.trim();
+                },
+                message: "The password must not consist of or contain spaces.",
+            },
+            {
+                validator: function (value: string): boolean {
+                    return value.trim().length > 0;
+                },
+                message: "Fill in the password.",
+            },
+        ],
     },
     email: {
         type: String,
-        required: true,
         unique: true,
         validate: [
             {
@@ -40,7 +52,7 @@ const UserSchema = new Schema<
                 message: "This email is already taken",
             },
             {
-                validator: async function (this: HydratedDocument<UserFields>, value: string): Promise<boolean> {
+                validator: function (this: HydratedDocument<UserFields>, value: string): boolean {
                     return regexEmail.test(value);
                 },
                 message: "Invalid email format",
@@ -57,9 +69,25 @@ const UserSchema = new Schema<
         type: String,
         required: true,
     },
-    displayName: String,
+    displayName: {
+        type: String,
+        validate: {
+            validator: function (value: string): boolean {
+                return value.trim().length > 0;
+            },
+            message: "Fill in the name to display in your profile.",
+        },
+    },
     googleID: String,
-    avatar: String,
+    avatar: {
+        type: String,
+        validate: {
+            validator: function (this: HydratedDocument<UserFields>, value: string): boolean {
+                return value.trim().length > 0;
+            },
+            message: "Avatar is required",
+        }
+    },
 });
 
 UserSchema.pre('save', async function (next) {
