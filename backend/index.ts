@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import usersRouter from "./routers/users";
 import config from "./config";
+import usersRouter from "./routers/users";
+import cocktailsRouter from './routers/cocktails';
 
 const app = express();
 const port = 8000;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/users", usersRouter);
+app.use("/cocktails", cocktailsRouter);
 
 const run: () => Promise<void> = async () => {
     await mongoose.connect(config.db);
