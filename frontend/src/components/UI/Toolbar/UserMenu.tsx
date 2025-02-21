@@ -4,7 +4,9 @@ import { useAppDispatch } from '../../../app/hooks';
 import { unsetUser } from '../../../store/slices/usersSlice';
 import { logout } from '../../../store/thunks/usersThunk';
 import { api_URL } from '../../../globalConstants.ts';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { getCocktails } from '../../../store/thunks/cocktailsThunk.ts';
+import { toast } from 'react-toastify';
 
 interface Props {
   user: IUser;
@@ -23,10 +25,25 @@ const UserMenu: React.FC<Props> = ({user}) => {
     dispatch(logout());
     dispatch(unsetUser());
     navigate('/');
+    toast.success('Successfully logged out.');
+    dispatch(getCocktails());
   };
 
   return (
-    <div className="d-flex align-items-center gap-4">
+    <div className="d-flex flex-wrap align-items-center gap-4">
+      <NavLink
+        to={`/cocktails?user=${user._id}`}
+        className="nav-link text-white fw-bold user-menu-link border-end pe-4"
+      >
+        My cocktails
+      </NavLink>
+      <NavLink
+        to="/cocktails/new"
+        className="nav-link text-white fw-bold user-menu-link"
+      >
+        Create cocktail!
+      </NavLink>
+
       <div
         className="dropdown"
         onMouseLeave={toggleMenu}
