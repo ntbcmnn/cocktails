@@ -65,6 +65,7 @@ usersRouter.post(
                 password: req.body.password,
                 displayName: req.body.displayName,
                 avatar: req.file ? "images" + req.file.filename : null,
+                role: req.body.role,
             });
 
             user.generateToken();
